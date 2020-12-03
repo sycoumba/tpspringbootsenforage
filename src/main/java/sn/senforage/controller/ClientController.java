@@ -66,4 +66,17 @@ public String list(ModelMap model){
 		
         return "redirect:/Client/liste";
 	}
-}	
+	@RequestMapping(value = "Client/delete",method = RequestMethod.GET)
+
+	public String delete(int id) {
+		try {
+		clientdao.delete(clientdao.getOne(id));
+		clientdao.flush();
+		}catch(Exception e) 	{
+			e.printStackTrace();
+			
+		}
+
+		return "redirect:Client/liste";
+}
+	}

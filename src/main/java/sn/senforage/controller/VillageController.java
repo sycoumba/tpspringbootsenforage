@@ -55,7 +55,6 @@ try {
 public String delete(int id) {
 	try {
 	villagedao.delete(villagedao.getOne(id));
-	villagedao.flush();
 	}catch(Exception e) 	{
 		e.printStackTrace();
 		
